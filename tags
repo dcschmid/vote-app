@@ -67,7 +67,12 @@ ChoiceBarBadge	src/components/ChoiceBar.js	/^const ChoiceBarBadge = styled.div`$
 ChoiceBarTitle	src/components/ChoiceBar.js	/^const ChoiceBarTitle = styled.div`$/;"	C
 Progress	src/components/ChoiceBar.js	/^const Progress = styled.div`$/;"	C
 StyledChoiceBar	src/components/ChoiceBar.js	/^const StyledChoiceBar = styled(ChoiceBar)`$/;"	C
+VotingComponent	src/components/VotingComponent.js	/^export default function VotingComponent({ vote }) {$/;"	f
 a	src/index.css	/^a {$/;"	s
+choices	src/index.js	/^  choices: [$/;"	p	class:vote
+description	src/index.js	/^  description: "Tell me: how has your day been so far?",$/;"	p	class:vote
 extends	.eslintrc.json	/^  "extends": "react-app"$/;"	s
 handleClick	src/components/ChoiceBar.js	/^  function handleClick() {$/;"	f	function:ChoiceBar
 html	src/index.css	/^html {$/;"	s
+title	src/index.js	/^  title: "How is your day?",$/;"	p	class:vote
+vote	src/index.js	/^const vote = {$/;"	c
