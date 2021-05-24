@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-
+import App from "./App";
 import VotingComponent from "./components/VotingComponent";
 import "./index.css";
 
@@ -15,6 +15,8 @@ const vote = {
 };
 
 ReactDom.render(
-  <VotingComponent vote={vote} />,
+  <App>
+    <VotingComponent vote={vote} />
+  </App>,
   document.getElementById("root")
 );

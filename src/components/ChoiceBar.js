@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const ChoiceBarBadge = styled.div`
@@ -34,15 +34,15 @@ const ChoiceBarTitle = styled.div`
   margin-top: -11px;
 `;
 
-export function ChoiceBar({ title, percent, className }) {
-  const [count, setCount] = useState(0);
-
-  function handleClick() {
-    setCount(count + 1);
-  }
-
+export function ChoiceBar({
+  title,
+  percent,
+  className,
+  count,
+  onClickHandler,
+}) {
   return (
-    <div className={className} onClick={handleClick}>
+    <div className={className} onClick={onClickHandler}>
       <Progress value={percent}>
         <ChoiceBarTitle>{title}</ChoiceBarTitle>
       </Progress>
