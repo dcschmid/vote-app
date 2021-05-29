@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import ChoiceBar from "./ChoiceBar";
 
 export default function VotingComponent({ vote: initialVote }) {
   const [vote, setVote] = useState(initialVote);
-  const totalVotes = vote.choices.reduce((prev, curr) => prev + curr.count, 0);
+
+  const totalVotes = useMemo(
+    () => vote.choices.reduce((prev, curr) => prev + curr.count, 0),
+    [vote]
+  );
 
   function registerChoice(choice) {
     setVote({
