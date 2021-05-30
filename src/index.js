@@ -1,7 +1,6 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDom from "react-dom";
 import App from "./App";
-import VotingComponent from "./components/VotingComponent";
 import "./index.css";
 
 const vote = {
@@ -14,9 +13,18 @@ const vote = {
   ],
 };
 
+const VotingComponent = lazy(() =>
+  import(
+    /* webpackChunkName: "VotingComponent" */
+    "./components/VotingComponent"
+  )
+);
+
 ReactDom.render(
   <App>
-    <VotingComponent vote={vote} />
+    <Suspense fallback="Bitte warten Sie...">
+      <VotingComponent vote={vote} />
+    </Suspense>
   </App>,
   document.getElementById("root")
 );
