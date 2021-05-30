@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, StrictMode } from "react";
 import ReactDom from "react-dom";
 import App from "./App";
 import "./index.css";
@@ -21,10 +21,12 @@ const VotingComponent = lazy(() =>
 );
 
 ReactDom.render(
-  <App>
-    <Suspense fallback="Bitte warten Sie...">
-      <VotingComponent vote={vote} />
-    </Suspense>
-  </App>,
+  <StrictMode>
+    <App>
+      <Suspense fallback="Bitte warten Sie...">
+        <VotingComponent vote={vote} />
+      </Suspense>
+    </App>
+  </StrictMode>,
   document.getElementById("root")
 );
